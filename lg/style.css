@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+.fcont {
+    width: 100svw;
+    height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#lgform {
+    width: 350px;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border: 1px solid #003090;
+    border-radius: 5px;
+}
+.inpcon {
+    width: 18rem;
+    height: 80px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3px;
+    position: relative;
+}
+.inpcon label {
+    font-size: 12px;
+}
+.nimput {
+    width: 100%;
+    height: 40px;
+    padding: 5px 5px 5px 35px;
+    border: 0;
+    background-color: #eeea;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+.sbtn {
+    margin: 0;
+}
+#showhide {
+    display: none;
+}
+.showhide {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    background: url(../res/assets/icons/show.svg) center / cover no-repeat;
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    margin-top: 23px;
+}
+#showhide:checked + .showhide {
+    background: url(../res/assets/icons/hide.svg) center / cover no-repeat;
+}

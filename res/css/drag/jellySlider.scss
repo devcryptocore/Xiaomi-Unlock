@@ -1,0 +1,88 @@
+.jelly-slider {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    .jelly-list {
+        display: block;
+        position: relative;
+        font-size: 0;
+        .jelly-slide {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            font-size: 12px;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    }
+    &.jelly-activated {
+
+    }
+    .jelly-prev {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        border: none;
+        background: none;
+        font-size: 0;
+        cursor: pointer;
+        &::after {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            content: '<';
+            font-size: 20px;
+            color: #000;
+            opacity: .5;
+        }
+    }
+    .jelly-next {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        border: none;
+        background: none;
+        font-size: 0;
+        cursor: pointer;
+        &::after {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            content: '>';
+            font-size: 20px;
+            color: #000;
+            opacity: .5;
+        }
+    }
+    &.jelly-fade {
+        .jelly-list {
+            width: 100% !important;
+            transform: translate(0, 0) !important;
+            transition-property: all;
+            .jelly-slide {
+                position: absolute;
+                opacity: 0;
+                &.jelly-active {
+                    position: relative;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

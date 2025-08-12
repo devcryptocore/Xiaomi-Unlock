@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>Tarjetas Colombia</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100svw;
+        height: 100svh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #d3d8de;
+    }
+    .card-container {
+        width: 30rem;
+        height: auto;
+        aspect-ratio: 1/1;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+    .X-card {
+        width: 100%;
+        height: 60px;
+        display: flex;
+    }
+    .first-card {
+        padding: 8px !important;
+    }
+    .in-card,
+    .first-card {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0px 8px;
+        background: #252837;
+        border-radius: 15px;
+        gap: 8px;
+    }
+    .in-card .col-marker {
+        width: 10px;
+        margin: 0;
+        background: #4f22fd;
+        padding: 0;
+        height: 35px;
+    }
+    .button-cont {
+        width: 95%;
+        height: 100%;
+        display: flex;
+    }
+    .col-marker {
+        height: 100%;
+        padding: 8px;
+        border-radius: 20px;
+        background: #252837;
+        margin: 0 0 0 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .col-marker:nth-child(2):before,
+    .col-marker:nth-child(3):before {
+        content: "";
+        display: flex;
+        width: 10px;
+        height: 100%;
+        background-color: #f48f31;
+        border-radius: 8px;
+    }
+    .col-marker:nth-child(3):before {
+        background-color: #ab77e3;
+    }
+    .sign-button {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 0 0 35px;
+        background-color: #252837;
+        background-position: 5px;
+        background-size: 20px;
+        background-repeat: no-repeat;
+        border-radius: 8px;
+        border: 0;
+        color: #ffffff91;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    .sign-button-active {
+        background-color: #eef0ff36 !important;
+        color: #fff !important;
+    }
+    .sign-button:nth-child(1) {
+        background-image: url(menu-navigation.svg);
+    }
+    .sign-button:nth-child(2),
+    .full-card .in-card .button-cont .sign-button {
+        background-image: url(pinterest.svg);
+        background-size: 25px;
+        background-color: #252837;
+        color: #ffffff91;
+    }
+    .full-card {
+        align-items: center;
+        justify-content: flex-start;
+        padding: 8px;
+        background: #252837;
+        border-radius: 15px;
+    }
+    .full-card .in-card .button-cont .sign-button:nth-child(1) {
+        background-image: url(figma.svg);
+        background-size: 35px;
+        padding: 0 0 0 40px;
+    }
+    .full-card .in-card .button-cont .sign-button:nth-child(3) {
+        background-image: url(behance.svg);
+        background-size: 35px;
+        padding: 0 0 0 45px;
+    }
+    .full-card .in-card .col-marker {
+        background: #4ee5dd;
+    }
+    .separator {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        color: #ffffff39;
+        transform: scaleY(2.3);
+        margin-right: 5px;
+    }
+    .third-card {
+        width: 40rem;
+    }
+    .third-card .in-card .col-marker {
+        background: #e25658;
+    }
+    .third-card .in-card .button-cont {
+        gap: 10px;
+    }
+    .tsec {
+        position: relative;
+    }
+    .tsec::after {
+        content: "";
+        width: 5px;
+        height: 100%;
+        display: flex;
+        background: #252837;
+        position: absolute;
+        right: 0;
+        box-shadow: -8px -1px 9px 4px #252837;
+    }
+    .tsec::before {
+        content: "";
+        width: 30px;
+        height: 100%;
+        display: flex;
+        background: #252837 url(airbnb.svg) 5px / 25px no-repeat;
+        position: absolute;
+        left: 0;
+        box-shadow: 8px 1px 9px 4px #252837;
+        z-index: 2;
+    }
+    .button-text {
+        display: inline-block;
+        white-space: nowrap;
+        transition: transform 0.3s ease;
+        will-change: transform;
+    }
+    .tsec:hover .button-text {
+        animation: scroll-text 5s linear infinite;
+    }
+    .third-card .in-card .button-cont .tsec {
+        background-image: url(airbnb.svg) !important;
+        background-size: 25px !important;
+        padding: 0 0 0 45px !important;
+        width: 33%;
+        overflow: hidden;
+        text-wrap-mode: nowrap;
+    }
+    @keyframes scroll-text {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+</style>
+<body>
+    <div class="card-container">
+        <div class="X-card">
+            <div class="in-card first-card">
+                <span class="col-marker"></span>
+                <div class="button-cont">
+                    <button class="sign-button sign-button-active">Start Page</button>
+                    <button class="sign-button">Pinterest</button>
+                </div>
+            </div>
+            <span class="col-marker"></span>
+            <span class="col-marker"></span>
+        </div>
+        <div class="X-card full-card">
+            <div class="in-card">
+                <span class="col-marker"></span>
+                <div class="button-cont">
+                    <button class="sign-button">Figma</button>
+                    <span class="separator">|</span>
+                    <button class="sign-button">Behance</button>
+                </div>
+            </div>
+        </div>
+        <div class="X-card full-card third-card">
+            <div class="in-card">
+                <span class="col-marker"></span>
+                <div class="button-cont">
+                    <button class="sign-button tsec"><span class="button-text">Apartment in Barcelona</span></button>
+                    <span class="separator">|</span>
+                    <button class="sign-button tsec"><span class="button-text">Condo in Barcelona</span></button>
+                    <span class="separator">|</span>
+                    <button class="sign-button tsec"><span class="button-text">Apartment in Madrid</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const buttons = document.querySelectorAll('.sign-button');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                    buttons.forEach(btn => btn.classList.remove('sign-button-active'));
+                    button.classList.add('sign-button-active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

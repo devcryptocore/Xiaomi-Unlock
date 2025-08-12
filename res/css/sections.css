@@ -1,0 +1,22 @@
+.section-contain {
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.section {
+    border-bottom: 0;
+}
+.samsungarea {
+    height: 50vh;
+}
+.simpleParallax {
+    height: 100%;
+}
+.mob-tarj {
+    width: 18rem;
+}

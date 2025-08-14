@@ -72,6 +72,72 @@ document.addEventListener("DOMContentLoaded",()=>{
         $('.modal-container').remove();
     }
 
+    if(document.querySelector("#btWhatsapp")){
+        document.querySelector("#btWhatsapp").addEventListener('click',()=>{
+            Swal.fire({
+                title: 'Contactenos por Whatsapp',
+                html: `
+                    <div class="ccard-container">
+                        <div class="ws-head">
+                            <div class="ws-logo"></div>
+                            <div class="ws-text-container">
+                                <h2>Iniciar una conversación</h2>
+                                <span>
+                                    !Hola, haga click el botón que corresponda a su región más cercana para contactar con nuestro equipo de soporte.
+                                </span>
+                            </div>
+                        </div>
+                        <span>Tiempo esperado de respuesta 10 minutos</span>
+                        <button class="ws-button" onclick="go_to_ws('https://api.whatsapp.com/send?phone=573172127507&text=Hola%20a%20*Soporte%20Latino%20Am%C3%A9rica*')">
+                            <img src="res/assets/images/ws-latam.webp" alt="ws-source"/>
+                        </button>
+                        <button class="ws-button" onclick="go_to_ws('https://api.whatsapp.com/send?phone=52990%20190%205618&text=Hola%20a%20*Soporte%20M%C3%A9xico*')">
+                            <img src="res/assets/images/ws-mexico.webp" alt="ws-source"/>
+                        </button>
+                        <button class="ws-button" onclick="go_to_ws('https://api.whatsapp.com/send?phone=34627450100&text=Hola%20a%20*Soporte%20Spain*')">
+                            <img src="res/assets/images/ws-espana.webp" alt="ws-source"/>
+                        </button>
+                    </div>
+                `,
+                showCloseButton: true,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });
+    }
+
+    if(document.querySelector("#btTelegram")){
+        document.querySelector("#btTelegram").addEventListener('click',()=>{
+            Swal.fire({
+                title: 'Contactenos por Telegram',
+                html: `
+                    <div class="ccard-container">
+                        <div class="ws-head tg-head">
+                            <div class="ws-logo telg"></div>
+                            <div class="ws-text-container">
+                                <h2>Iniciar una conversación</h2>
+                                <span>
+                                    !Hola, haga click el botón que corresponda a su región más cercana para contactar con nuestro equipo de soporte.
+                                </span>
+                            </div>
+                        </div>
+                        <span>Tiempo esperado de respuesta 10 minutos</span>
+                        <button class="ws-button tgbtn" onclick="go_to_ws('https://api.whatsapp.com/send?phone=573172127507&text=Hola%20a%20*Soporte%20Latino%20Am%C3%A9rica*')">
+                            <img src="res/assets/images/ws-latam.webp" alt="ws-source"/>
+                        </button>
+                    </div>
+                `,
+                showCloseButton: true,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });
+    }
+
+    window.go_to_ws = (link) => {
+        window.open(link);
+    }
+
 });
 
 function set_video(source) {

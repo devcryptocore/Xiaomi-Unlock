@@ -334,6 +334,117 @@ body {
     box-shadow: inset 2px 3px 9px 0 #baffbb, 3px 3px 9px 0 #009503;
     background: #00a703;
 }
+.floatingButtons {
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    position: fixed;
+    right: 10px;
+    bottom: 20px;
+    z-index: 888;
+}
+.f-btn {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 0;
+    background: #00000000;
+    cursor: pointer;
+}
+.f-btn img {
+    max-width: 65px;
+    max-height: 65px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    position: relative;
+    filter: drop-shadow(2px 2px 3px #00000033);
+    transition: all .5s cubic-bezier(1, 0, 0, 1);
+}
+#btTelegram img{
+    max-width: 60px;
+    max-height: 60px;
+}
+.f-btn img:hover {
+    transform: translateX(-20%) scale(1.1);
+    transition: all .5s cubic-bezier(1, 0, 0, 1);
+}
+.ccard-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+}
+.ccard-container span {
+    font-size: 12px;
+    padding: 10px 0px;
+    color: #9f9f9f;
+}
+.ws-head {
+    width: 100%;
+    background: #2db742;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 5px 0px 0px;
+}
+.tg-head {
+    background: #4dbfe5;
+}
+.ws-logo {
+    width: 100px;
+    height: 10vh;
+    background: url(../assets/images/whatsapp.svg) top / 100% no-repeat;
+}
+.telg {
+    background: url(../assets/images/telegram.svg) top / 100% no-repeat;
+}
+.ws-text-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.ws-text-container h2 {
+    text-align: left;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+.ws-text-container span {
+    text-align: left;
+    font-size: 13px;
+    color: #fff;
+}
+.ws-button {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #00000000;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: inset 4px 0px 0 0 #2db742;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.tgbtn {
+    box-shadow: inset 4px 0px 0 0 #3c96b4;
+}
+.ws-button img {
+    max-width: 100%;
+}
 /* Responsivo para móviles pequeños */
 @media (max-width: 600px) {
     .section {
@@ -378,6 +489,13 @@ body {
     }
     .text-social p {
         text-align: center;
+    }
+    .ws-button {
+        margin-bottom: 15px;
+        height: 70px;
+    }
+    .ws-button img {
+        max-width: 80%;
     }
 
 }

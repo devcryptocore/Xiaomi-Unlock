@@ -1,3 +1,8 @@
+<?php
+    if(isset($_GET['brand'])){
+        $marca = $_GET['brand'];
+        $modelo = $_GET['model'];
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,23 +23,23 @@
 <body>
     <main class="main-container">
         <div class="navbar">
-            <img src="../res/assets/images/samsung_icon.svg" alt="Logo Samsung">
-            <h1>Samsung</h1>
+            <img id="lgo" src="../res/assets/images/samsung_icon.svg" alt="Logo Samsung">
+            <h1 id="ttl">Series A1-FRP</h1>
         </div>
         <section class="section samsungarea" id="samsung">
-            <img src="../res/assets/images/principalbg/samsungbanner.jpg" class="parallax-img" alt="Imagen con parallax" style="max-width: 100%;">
+            <img src="../res/assets/images/principalbg/seriessbanner.png" class="parallax-img" alt="Imagen con parallax" style="max-width: 100%;">
         </section>
         <section class="section-contain" id="scontainer"></section>
         <section class="section mark-section">
-            <img src="../res/assets/images/samsung.svg" alt="Samsung Icon">
-            <h2>Samsung Videos</h2>
+            <img src="../res/assets/images/<?=$marca;?>.svg" alt="Samsung Icon">
+            <h2><?=$marca;?> Videos</h2>
         </section>
         <section class="section-contain">
             <div class="sub-video-cont">
                 <div class="video-sources especial-video"></div>
                 <div class="video-sources especial-video"></div>
             </div>
-            <div class="sub-video-cont">
+            <div class="sub-video-cont"> 
                 <div class="video-sources especial-video"></div>
                 <div class="video-sources especial-video"></div>
             </div>
@@ -42,24 +47,31 @@
     </main>
     <script>
         (()=>{
-            const cons = "../admin/upload.php?getSamsung";
-            const dt = {
-                method: "GET",
-                headers: {
-                    'Content-Type':'application/json'
-                } 
-            }
-            fetch(cons,dt)
+            let brand = '<?=$marca;?>';
+            let model = '<?=$modelo;?>';
+            const cons = "../admin/upload.php?getBrandModel";
+            const dt = new FormData();
+            dt.append("brand",brand);
+            dt.append("model",model);
+            fetch(cons,{
+                method: "POST",
+                body: dt
+            })
                 .then(rr => rr.json())
                 .then(rps => {console.log(rps)
                     if(rps.status == 'success'){
+                        document.querySelector("#lgo").setAttribute("src",`../res/assets/images/${brand}_icon.svg`);
+                        document.querySelector("#ttl").innerText = rps.title;
                         document.querySelector("#scontainer").innerHTML = rps.tarjetas;
                     }
                 })
         })();
-        function gotoitem(brand,model,ref){
-            location.href = `../item/?brand=${brand}&model=${model}&ref=${ref}`;
-        }
     </script>
 </body>
 </html>
+<?php
+    }
+    else {
+        header("Location: ../");
+    }
+?>

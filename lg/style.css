@@ -41,10 +41,13 @@ body {
     height: 40px;
     padding: 5px 5px 5px 35px;
     border: 0;
-    background-color: #eeea;
+    background: #eeea url(../res/assets/images/user.svg) 5px / 20px no-repeat;
     border-radius: 5px;
     font-size: 14px;
     outline: none;
+}
+#upass {
+    background: #eeea url(../res/assets/images/lock.svg) 5px / 20px no-repeat;
 }
 .sbtn {
     margin: 0;

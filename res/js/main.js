@@ -187,3 +187,15 @@ async function getVersion() {
         console.error(`Error en la solicitud Fetch ${error}`);
     }     
 }
+
+function get_source(brand,model){
+    location.href = `brand/?brand=${brand}&model=${model}`;
+}
+
+function gotoseries(ref){
+    location.href = `samsung/series/?ref=${ref}`;
+}
+
+function gotoitem(brand,model,ref){
+    location.href = `item/?brand=${brand}&model=${model}&ref=${ref}`;
+}
